@@ -4,7 +4,7 @@ import Nav from "../Nav";
 function ReactFacts() {
     return (
         <div>
-            <Navbar />
+            <Nav />
             <h1>Facts</h1>
         </div>
     );
