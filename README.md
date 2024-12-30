@@ -10,3 +10,7 @@ Using this repository to track my progress as I learn react.
 2. Create a vite project using `npm create vite@latest`.
 3. cd into the project and run `npm install` to install all dependencies.
 4. Use command `npm run dev` to start the node server.
+
+## Lessons Learnt:
+1. React is declarative meaning I don't have to tell it how to do something related to front-end. I just tell it what to do and it takes care of how to do it. Showed how vanilla js does imperative coding in this [commit](https://github.com/surya-441/first-react/commit/abed42166ceff5ecbc829f50183ef9a7896a6426).
+2. Vite expects users to use jsx extension.
