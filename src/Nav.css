@@ -1,8 +1,8 @@
-ul {
+nav ul {
     list-style-type: none;
 }
 
-ul li {
+nav ul li {
     display: inline-block;
     margin: 0 10px;
 }
