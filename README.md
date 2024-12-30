@@ -14,3 +14,5 @@ Using this repository to track my progress as I learn react.
 ## Lessons Learnt:
 1. React is declarative meaning I don't have to tell it how to do something related to front-end. I just tell it what to do and it takes care of how to do it. Showed how vanilla js does imperative coding in this [commit](https://github.com/surya-441/first-react/commit/abed42166ceff5ecbc829f50183ef9a7896a6426).
 2. Vite expects users to use jsx extension.
+3. Setting up React Router and pages.
+4. Remember to check browser console incase something unexpected happens.
