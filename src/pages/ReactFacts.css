@@ -1,0 +1,9 @@
+.react-facts {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #27292c;
+    color: white;
+}
+
+.react-facts > h1 {
+    margin-top: 40px;
+}
