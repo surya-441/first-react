@@ -7,3 +7,25 @@ nav ul li {
     display: inline-block;
     margin: 0 10px;
 }
+
+.logo-img {
+    width: 40px;
+    margin-right: 7px;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header {
+    height: 90px;
+    background-color: #21222A;
+    padding: 30px 25px;
+}
+
+.logo-span {
+    color: #61DAFB;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
