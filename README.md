@@ -16,3 +16,4 @@ Using this repository to track my progress as I learn react.
 2. Vite expects users to use jsx extension.
 3. Setting up React Router and pages.
 4. Remember to check browser console incase something unexpected happens.
+5. <> </> is a react Fragment component which allows you to wrap multiple components within a single return statement without using div as a wrapper.
