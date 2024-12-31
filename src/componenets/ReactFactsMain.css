@@ -1,0 +1,17 @@
+.react-facts-main {
+    color: white;
+    font-family: Inter, sans-serif;
+}
+
+.main-h1 {
+    font-weight: 700;
+}
+
+.main-ul {
+    font-weight: 400;
+    size: 16px;
+}
+
+.main-ul > li::marker {
+    color: #61DAFB
+}
