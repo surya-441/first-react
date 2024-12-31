@@ -2,10 +2,10 @@ import React from 'react';
 import Nav from '../Nav';
 function Home() {
     return (
-        <div>
-        <Nav />
-        <h1>Home</h1>
-        </div>
+        <main>
+            <Nav />
+            <h1>Home</h1>
+        </main>
     )
 }
 export default Home;
