@@ -1,11 +1,12 @@
 import React from 'react';
 import Nav from '../componenets/Nav';
+import HomeMain from '../componenets/HomeMain';
 function Home() {
     return (
-        <main>
+        <>
             <Nav />
-            <h1>Home</h1>
-        </main>
-    )
+            <HomeMain />
+        </>
+    );
 }
 export default Home;
