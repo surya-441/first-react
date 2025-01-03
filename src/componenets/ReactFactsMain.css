@@ -20,5 +20,6 @@
     line-height: 20px;
 }
 .main-ul > li::marker {
-    color: #61DAFB
+    color: #61DAFB;
+    font-size: 1.5rem;
 }
