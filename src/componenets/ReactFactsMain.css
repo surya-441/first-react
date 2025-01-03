@@ -2,6 +2,9 @@
     color: white;
     font-family: Inter, sans-serif;
     padding: 30px 30px;
+    background-image: url("/src/assets/half-icon-bg.png");
+    background-repeat: no-repeat;
+    background-position: right 70%;
 }
 
 .main-h1 {
