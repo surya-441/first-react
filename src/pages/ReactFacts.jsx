@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../componenets/Nav";
+import Nav from "../componenets/ReactFactsNav";
 import ReactFactsMain from "../componenets/ReactFactsMain";
 import './ReactFacts.css';
 

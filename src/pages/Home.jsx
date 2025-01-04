@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../componenets/Nav';
+import Nav from '../componenets/ReactFactsNav';
 import HomeMain from '../componenets/HomeMain';
 function Home() {
     return (

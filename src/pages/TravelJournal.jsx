@@ -1,4 +1,4 @@
-import Nav from "../componenets/Nav";
+import Nav from "../componenets/ReactFactsNav";
 
 function TravelJournal() {
     return (
