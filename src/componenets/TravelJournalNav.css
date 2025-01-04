@@ -1,0 +1,41 @@
+.travel-journal-nav-header {
+    height: 55px;
+    background-color: #F55A5A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.travel-journal-nav {
+    display: flex;
+    align-items: center;
+    /* height: 100%;
+    width: 100%; */
+}
+.center-logo{
+    display: flex;
+    align-items: center;
+}
+.globe-img {
+    display: inline-block;
+    padding-left: 10px;
+}
+.globe-span {
+    color: white;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+.travel-journal-nav ul {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    right: 20px;
+}
+
+.travel-journal-nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
