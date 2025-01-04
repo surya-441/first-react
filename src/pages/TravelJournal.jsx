@@ -1,4 +1,5 @@
 import TravelJournalNav from "../componenets/TravelJournalNav";
+import './TravelJournal.css';
 
 function TravelJournal() {
     return (
