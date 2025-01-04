@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import NavLinks from './NavLinks';
 import './ReactFactsNav.css';
 function Nav() {
     return (
@@ -6,17 +6,7 @@ function Nav() {
             <nav className = "nav">
                 <img className="logo-img" src ="/src/assets/react-icon.png" alt="React Logo" />
                 <span className="logo-span">ReactFacts</span>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/reactfacts">React Facts</Link>
-                    </li>
-                    <li>
-                        <Link to="/traveljournal">Travel Journal</Link>
-                    </li>
-                </ul>
+                <NavLinks />
             </nav>
         </header>
     );
