@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from '../componenets/ReactFactsNav';
 import HomeMain from '../componenets/HomeMain';
+import ReactFactsNav from '../componenets/ReactFactsNav';
 function Home() {
     return (
         <>
-            <Nav />
+            <ReactFactsNav />
             <HomeMain />
         </>
     );

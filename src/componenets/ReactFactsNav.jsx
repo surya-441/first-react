@@ -1,6 +1,6 @@
 import NavLinks from './NavLinks';
 import './ReactFactsNav.css';
-function Nav() {
+function ReactFactsNav() {
     return (
         <header className="header">
             <nav className = "nav">
@@ -12,4 +12,4 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default ReactFactsNav;
