@@ -1,9 +1,9 @@
-import Nav from "../componenets/ReactFactsNav";
+import TravelJournalNav from "../componenets/TravelJournalNav";
 
 function TravelJournal() {
     return (
         <div className="travel-journal">
-            <Nav />
+            <TravelJournalNav />
             <h1>Travel Journal</h1>
         </div>
     );
