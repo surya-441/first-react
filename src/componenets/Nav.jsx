@@ -13,6 +13,9 @@ function Nav() {
                     <li>
                         <Link to="/reactfacts">React Facts</Link>
                     </li>
+                    <li>
+                        <Link to="/traveljournal">Travel Journal</Link>
+                    </li>
                 </ul>
             </nav>
         </header>
