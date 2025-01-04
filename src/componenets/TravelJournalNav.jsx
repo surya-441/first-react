@@ -2,7 +2,11 @@ import NavLinks from "./NavLinks";
 
 function TravelJournalNav() {
     return (
-        <NavLinks />
+        <header className='travel-journal-nav-header'>
+            <nav className="travel-journal-nav">
+                <NavLinks />
+            </nav>
+        </header>
     );
 }
 
