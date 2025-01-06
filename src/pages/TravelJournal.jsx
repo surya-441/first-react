@@ -1,12 +1,12 @@
 import TravelJournalNav from "../componenets/TravelJournalNav";
-import Entry from "../componenets/Entry";
+import TravelJournalMain from "../componenets/TravelJournalMain";
 import './TravelJournal.css';
 
 function TravelJournal() {
     return (
         <div className="travel-journal">
             <TravelJournalNav />
-            <Entry />
+            <TravelJournalMain />
         </div>
     );
 }
