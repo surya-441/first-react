@@ -1,0 +1,18 @@
+.entry-div {
+    display: flex;
+}
+
+.entry-image {
+    width: 125px;
+    height: 168px;
+}
+
+.entry-content {
+    display: flex;
+    /* flex-direction: column; */
+    padding: 20px 20px;
+}
+.entry-location {
+    font-weight: 400;
+    font-size: 0.625rem;
+}

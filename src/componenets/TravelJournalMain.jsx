@@ -1,7 +1,9 @@
 import Entry from "./Entry";
+import './TravelJournalMain.css';
+
 function TravelJournalMain() {
     return (
-        <main>
+        <main className="travel-journal-main">
             <Entry />
         </main>
     );
