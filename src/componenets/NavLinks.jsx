@@ -11,6 +11,9 @@ function NavLinks() {
             <li>
                 <Link to="/traveljournal">Travel Journal</Link>
             </li>
+            <li>
+                <Link to="/chefclaude">Chef Claude</Link>
+            </li>
         </ul>
     );
 }
