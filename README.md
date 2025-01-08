@@ -18,3 +18,6 @@ Using this repository to track my progress as I learn react.
 4. Remember to check browser console incase something unexpected happens.
 5. <> </> is a react Fragment component which allows you to wrap multiple components within a single return statement without using div as a wrapper.
 6. Props is the key to making React composable.
+7. Props are meant to be immutable. They are passed from above and are supposed to be used as is without modification.
+8. State on the other hand is meant to be changed. State variables, when updated, will trigger a re-render.
+9. From a top level view, react components are basically functions that return JSX code. React renders these returned JSX code once when the page is first loaded. React only re-renders a page when the component receives new props or when a state inside a function is changed.
