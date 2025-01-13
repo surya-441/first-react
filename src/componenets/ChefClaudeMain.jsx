@@ -6,14 +6,13 @@ import { getRecipeFromMistral } from '../ai';
 
 function ChefClaudeMain() {
     const [ingredients, setIngredients] = useState([]);
-    const [recipeShown, setRecipeShown] = useState(false);
     const [recipe, setRecipe] = useState("")
     function addIngredient(formData) {
         setIngredients(prevIngredients => [...prevIngredients, formData.get("ingredient")])
     }
-    function getRecipe() {
-        setRecipe(getRecipeFromMistral(ingredients));
-        setRecipeShown(prev => !prev);
+    async function getRecipe() {
+        const recipeMD = await getRecipeFromMistral(ingredients)
+        setRecipe(recipeMD);
     }
     return (
         <main className="chef-claude-main">
@@ -27,7 +26,7 @@ function ChefClaudeMain() {
                 <button>Add ingredient</button>
             </form>
             {ingredients.length > 0 && <ChefClaudeIngredientsList ingredients={ingredients} getRecipe={getRecipe}/>}
-            {recipeShown && <ChefClaudeRecipe recipe={recipe}/>}
+            {recipe.length > 0 && <ChefClaudeRecipe recipe={recipe}/>}
         </main>
     );
 }
