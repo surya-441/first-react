@@ -2,14 +2,17 @@ import './ChefClaudeMain.css';
 import { useState } from 'react';
 import ChefClaudeRecipe from './ChefClaudeRecipe';
 import ChefClaudeIngredientsList from './ChefClaudeIngredientsList';
+import { getRecipeFromMistral } from '../ai';
 
 function ChefClaudeMain() {
     const [ingredients, setIngredients] = useState([]);
     const [recipeShown, setRecipeShown] = useState(false);
+    const [recipe, setRecipe] = useState("")
     function addIngredient(formData) {
         setIngredients(prevIngredients => [...prevIngredients, formData.get("ingredient")])
     }
     function getRecipe() {
+        setRecipe(getRecipeFromMistral(ingredients));
         setRecipeShown(prev => !prev);
     }
     return (
@@ -24,7 +27,7 @@ function ChefClaudeMain() {
                 <button>Add ingredient</button>
             </form>
             {ingredients.length > 0 && <ChefClaudeIngredientsList ingredients={ingredients} getRecipe={getRecipe}/>}
-            {recipeShown && <ChefClaudeRecipe />}
+            {recipeShown && <ChefClaudeRecipe recipe={recipe}/>}
         </main>
     );
 }
