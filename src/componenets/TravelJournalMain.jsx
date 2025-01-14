@@ -13,7 +13,6 @@ function TravelJournalMain() {
             text={entry.text}
         />
     })
-    console.log(entries)
     return (
         <main className="travel-journal-main">
             {entries}
