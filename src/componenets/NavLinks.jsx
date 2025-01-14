@@ -14,6 +14,9 @@ function NavLinks() {
             <li>
                 <Link to="/chefclaude">Chef Claude</Link>
             </li>
+            <li>
+                <Link to="/memegenerator">Meme Generator</Link>
+            </li>
         </ul>
     );
 }

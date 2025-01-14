@@ -1,0 +1,7 @@
+.meme-generator{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
