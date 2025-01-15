@@ -17,6 +17,10 @@ function MemeGeneratorMain() {
         const {value, name} = event.currentTarget;
         setMeme((prevMeme) => ({...prevMeme, [name]: value}))
     }
+    function getRandomMeme() {
+        const newMemeUrl = memeArray[Math.floor(Math.random() * memeArray.length)].url
+        setMeme(prevMeme => ({...prevMeme, imageUrl: newMemeUrl}))
+    }
     return (
         <main className="meme-generator-main">
             <div className="meme-generator-form">
@@ -39,7 +43,7 @@ function MemeGeneratorMain() {
                         value={meme.bottomText}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button onClick={getRandomMeme}>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl} />
