@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './MemeGeneratorMain.css';
 
 function MemeGeneratorMain() {
@@ -7,6 +7,12 @@ function MemeGeneratorMain() {
         topText: "One does not simply",
         bottomText: "Walk into Mordor"
     });
+    const [memeArray, setMemeArray] = useState([]);
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(jsonData => setMemeArray(jsonData.data.memes))
+    }, []);
     function handleChange(event) {
         const {value, name} = event.currentTarget;
         setMeme((prevMeme) => ({...prevMeme, [name]: value}))
