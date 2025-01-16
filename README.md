@@ -2,7 +2,7 @@ Using this repository to track my progress as I learn react.
 
 ## Current setup:
 1. Using Node JS for running JS.
-2. Using Vite. Don't know why.
+2. Using Vite. Don't know why. UPDATE: I know now. Browser doesn't understand JSX. Vite converts JSX to JS and then some. But I **require** it now to convert JSX code.
 3. Using React JS.
 
 ## Setup guide:
