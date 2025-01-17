@@ -17,6 +17,9 @@ function NavLinks() {
             <li>
                 <Link to="/memegenerator">Meme Generator</Link>
             </li>
+            <li>
+                <Link to="/tenzies">Tenzies</Link>
+            </li>
         </ul>
     );
 }

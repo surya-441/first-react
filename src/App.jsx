@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import TravelJournal from "./pages/TravelJournal";
 import ChefClaude from "./pages/ChefClaude";
 import MemeGenerator from "./pages/MemeGenerator";
+import Tenzies from "./pages/Tenzies";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/traveljournal" element = {<TravelJournal />} />
                 <Route path="/chefclaude" element = {<ChefClaude /> } />
                 <Route path="/memegenerator" element = {<MemeGenerator />} />
+                <Route path="/tenzies" element = {<Tenzies />} />
             </Routes>
         </>
     );
