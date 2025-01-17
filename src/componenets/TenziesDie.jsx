@@ -1,8 +1,8 @@
 import './TenziesDie.css';
 
-function TenziesDie({value}) {
+function TenziesDie({value, isHeld}) {
     return (
-        <button>{value}</button>
+        <button style={isHeld ? {backgroundColor: "#59E391" }: {}}>{value}</button>
     );
 }
 

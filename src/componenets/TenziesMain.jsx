@@ -14,7 +14,7 @@ function TenziesMain() {
             }));
     }
     const [diceArray, setDiceArray] = useState(generateAllNewDice());
-    const tenziesDieArr = diceArray.map((die) => <TenziesDie key={die.id} value={die.value} />)
+    const tenziesDieArr = diceArray.map((die) => <TenziesDie key={die.id} value={die.value} isHeld={die.isHeld} />)
     return (
         <main className="tenzies-main">
             <div className="dice-container">
