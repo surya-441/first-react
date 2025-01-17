@@ -1,7 +1,10 @@
 import './Tenzies.css';
+import TenziesMain from '../componenets/TenziesMain.jsx';
 function Tenzies() {
     return (
-        <h1>Hi from tenzies</h1>
+        <div className='tenzies'>
+            <TenziesMain />
+        </div>
     );
 }
 
