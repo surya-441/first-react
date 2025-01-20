@@ -29,3 +29,4 @@ Using this repository to track my progress as I learn react.
 15. One example of using useEffect is when you want to make an API call and set some state based on the response from the API call. If it weren't for useEffect, this would result in an infinite loop because when you get data from the API call and call setState, it will trigger a rerender and that will fetch data from API which sets the state and it goes on! With useEffect you can decide when the code inside it has to run!
 16. Be careful with useEffect as it can lead to unexpected behaviors!
 17. Based on my usage, I think when we use useEffect, we should console.log in all the functions inside it to see if works the way we intended.
+18. if you make a function call as a prop to useState function, even if the state value doesn't change during each run, react will make the function call during each re-render. To prevent that pass a function as a prop and react will call it only once at the beginning.
