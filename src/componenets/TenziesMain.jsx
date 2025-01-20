@@ -13,8 +13,17 @@ function TenziesMain() {
                 id: nanoid()
             }));
     }
+    function toggleHeld(id) {
+        setDiceArray((prevDiceArray) => 
+            prevDiceArray.map((die) => (
+                die.id === id 
+                    ? {...die, isHeld: !die.isHeld}
+                    : die
+            ))
+        );
+    }
     const [diceArray, setDiceArray] = useState(generateAllNewDice());
-    const tenziesDieArr = diceArray.map((die) => <TenziesDie key={die.id} value={die.value} isHeld={die.isHeld} />)
+    const tenziesDieArr = diceArray.map((die) => <TenziesDie key={die.id} value={die.value} isHeld={die.isHeld} id={die.id} toggleHeld={toggleHeld} />)
     return (
         <main className="tenzies-main">
             <div className="dice-container">
