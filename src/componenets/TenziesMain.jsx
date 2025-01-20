@@ -30,7 +30,8 @@ function TenziesMain() {
         );
     }
     function rollDice() {
-        setDiceArray((prevDiceArray) => 
+        setDiceArray( gameWon ? generateAllNewDice() :
+            (prevDiceArray) => 
             prevDiceArray.map((die) => (
                 die.isHeld === true
                     ? die
