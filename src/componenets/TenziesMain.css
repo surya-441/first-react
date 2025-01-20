@@ -14,10 +14,10 @@
     display:grid;
     grid-template: auto auto / repeat(5, 1fr);
     row-gap: 40px;
-    column-gap: 20px;
+    column-gap: 40px;
 }
 
-.roll-dice {
+.roll-dice-button {
     width: 200px;
     height: 100px;
     border-radius: 6px;

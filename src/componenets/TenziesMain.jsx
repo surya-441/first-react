@@ -20,7 +20,7 @@ function TenziesMain() {
             <div className="dice-container">
                 {...tenziesDieArr}
            </div>
-           <button className="roll-dice" onClick={()=>setDiceArray(generateAllNewDice())}>Roll</button>
+           <button className="roll-dice-button" onClick={()=>setDiceArray(generateAllNewDice())}>Roll</button>
         </main>
     );
 }
