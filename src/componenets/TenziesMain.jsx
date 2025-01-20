@@ -1,12 +1,13 @@
 import TenziesDie from './TenziesDie';
 import './TenziesMain.css';
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
 
 function TenziesMain() {
     const [diceArray, setDiceArray] = useState(() => generateAllNewDice());
     const tenziesDieArr = diceArray.map((die) => <TenziesDie key={die.id} value={die.value} isHeld={die.isHeld} id={die.id} toggleHeld={toggleHeld} />)
+    const buttonRef = useRef(null)
 
     const gameWon = diceArray.every(die => die.isHeld) &&
         diceArray.every(die => die.value === diceArray[0].value);
@@ -39,7 +40,12 @@ function TenziesMain() {
             ))
         )
     }
-   return (
+    useEffect(()=>{
+        if(gameWon) {
+            buttonRef.current.focus()
+        }
+    }, [gameWon])
+    return (
         <main className="tenzies-main">
             {gameWon && <Confetti />}
             <section>
@@ -49,7 +55,7 @@ function TenziesMain() {
             <div className="dice-container">
                 {...tenziesDieArr}
            </div>
-           <button className="roll-dice-button" onClick={rollDice}>
+           <button ref={buttonRef} className="roll-dice-button" id="new-game" onClick={rollDice}>
                 {gameWon === true ? "New Game" : "Roll" }
             </button>
         </main>
