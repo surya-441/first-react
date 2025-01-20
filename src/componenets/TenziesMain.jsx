@@ -22,6 +22,15 @@ function TenziesMain() {
             ))
         );
     }
+    function rollDice() {
+        setDiceArray((prevDiceArray) => 
+            prevDiceArray.map((die) => (
+                die.isHeld === true
+                    ? die
+                    : {...die, value: Math.ceil(Math.random() * 6)}
+            ))
+        )
+    }
     const [diceArray, setDiceArray] = useState(generateAllNewDice());
     const tenziesDieArr = diceArray.map((die) => <TenziesDie key={die.id} value={die.value} isHeld={die.isHeld} id={die.id} toggleHeld={toggleHeld} />)
     return (
@@ -29,7 +38,7 @@ function TenziesMain() {
             <div className="dice-container">
                 {...tenziesDieArr}
            </div>
-           <button className="roll-dice-button" onClick={()=>setDiceArray(generateAllNewDice())}>Roll</button>
+           <button className="roll-dice-button" onClick={rollDice}>Roll</button>
         </main>
     );
 }
