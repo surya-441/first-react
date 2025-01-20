@@ -35,6 +35,10 @@ function TenziesMain() {
     const tenziesDieArr = diceArray.map((die) => <TenziesDie key={die.id} value={die.value} isHeld={die.isHeld} id={die.id} toggleHeld={toggleHeld} />)
     return (
         <main className="tenzies-main">
+            <text>
+                <h1 className="tenzies-title">Tenzies</h1>
+                <p className="tenzies-instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+            </text>
             <div className="dice-container">
                 {...tenziesDieArr}
            </div>
