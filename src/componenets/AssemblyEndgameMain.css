@@ -19,3 +19,16 @@
 .game-status > p {
     margin: 5px;
 }
+
+.language-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    max-width: 350px;
+}
+
+.language-chips > span {
+    padding: 4.5px;
+    border-radius: 3px;
+}
