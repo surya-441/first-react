@@ -4,7 +4,15 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 function AssemblyEndgameMain() {
     const [ currentWord, setCurrentWord ] = useState('react');
+    const [ guessedLetters, setGuessedLetters ] = useState(() => new Set());
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    console.log(guessedLetters);
+
+    function addGuess(ch) {
+        if(guessedLetters.has(ch) !== true)
+            setGuessedLetters((prevGuesses) => new Set(prevGuesses).add(ch))
+    }
 
     const languageElements = languages.map((language) => 
         <span  key={nanoid()}
@@ -19,7 +27,11 @@ function AssemblyEndgameMain() {
         </span>
     )
     const alphabetArray = alphabet.split("").map((ch) =>
-        <button key={nanoid()}>{ch.toUpperCase()}</button>
+        <button key={nanoid()}
+            onClick={()=>addGuess(ch)}
+        >
+            {ch.toUpperCase()}
+        </button>
     )
 
     return (
