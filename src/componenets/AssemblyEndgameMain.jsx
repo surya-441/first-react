@@ -37,6 +37,7 @@ function AssemblyEndgameMain() {
             <section className='keyboard'>
                 {alphabetArray}
             </section>
+            <button className='new-game-button'>New Game</button>
         </main>
     );
 }
