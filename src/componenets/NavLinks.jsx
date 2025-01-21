@@ -20,6 +20,9 @@ function NavLinks() {
             <li>
                 <Link to="/tenzies">Tenzies</Link>
             </li>
+            <li>
+                <Link to="/assembly-endgame">Assembly Endgame</Link>
+            </li>
         </ul>
     );
 }
