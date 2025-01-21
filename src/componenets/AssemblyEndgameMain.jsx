@@ -4,6 +4,8 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 function AssemblyEndgameMain() {
     const [ currentWord, setCurrentWord ] = useState('react');
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
     const languageElements = languages.map((language) => 
         <span  key={nanoid()}
             style={{backgroundColor: language.backgroundColor, color: language.color}}
@@ -16,6 +18,10 @@ function AssemblyEndgameMain() {
             {ch.toUpperCase()}
         </span>
     )
+    const alphabetArray = alphabet.split("").map((ch) =>
+        <button key={nanoid()}>{ch.toUpperCase()}</button>
+    )
+
     return (
         <main className='assembly-endgame-main'>
             <section className='game-status'>
@@ -27,6 +33,9 @@ function AssemblyEndgameMain() {
             </section>
             <section className='current-word'>
                 {currentWordArray}
+            </section>
+            <section className='keyboard'>
+                {alphabetArray}
             </section>
         </main>
     );
