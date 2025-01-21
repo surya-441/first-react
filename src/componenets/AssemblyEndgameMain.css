@@ -32,3 +32,21 @@
     padding: 4.5px;
     border-radius: 3px;
 }
+.current-word {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+.current-word > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #323232;
+    color: #F9F4DA;
+    width: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    border-bottom: solid 1px #F9F4DA;
+}
