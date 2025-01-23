@@ -61,7 +61,7 @@
     gap: 6px;
 }
 
-.keyboard > button {
+.keyboard-button {
     height: 40px;
     width: 40px;
     background-color: #FCBA29;
@@ -72,6 +72,14 @@
     font-weight: 600;
     font-size: 1rem;
     color: #1E1E1E;
+}
+
+.right {
+    background-color: #10A95B;
+}
+
+.wrong {
+    background-color: #EC5D49;
 }
 
 .new-game-button {

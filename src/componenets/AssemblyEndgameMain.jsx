@@ -1,17 +1,19 @@
 import './AssemblyEndgameMain.css';
 import { languages } from '../languages';
 import { nanoid } from 'nanoid';
+import { clsx } from 'clsx';
 import { useState } from 'react';
 function AssemblyEndgameMain() {
     const [ currentWord, setCurrentWord ] = useState('react');
-    const [ guessedLetters, setGuessedLetters ] = useState(() => new Set());
+    const [ guessedLetters, setGuessedLetters ] = useState([]);
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     console.log(guessedLetters);
 
     function addGuess(ch) {
-        if(guessedLetters.has(ch) !== true)
-            setGuessedLetters((prevGuesses) => new Set(prevGuesses).add(ch))
+        setGuessedLetters((prevGuesses) => prevGuesses.includes(ch) ?
+                                            prevGuesses :
+                                            [...prevGuesses, ch])
     }
 
     const languageElements = languages.map((language) => 
@@ -23,12 +25,13 @@ function AssemblyEndgameMain() {
     )
     const currentWordArray = currentWord.split("").map((ch) => 
         <span key={nanoid()}>
-            {ch.toUpperCase()}
+            {guessedLetters.includes(ch) ? ch.toUpperCase() : ""}
         </span>
     )
     const alphabetArray = alphabet.split("").map((ch) =>
         <button key={nanoid()}
             onClick={()=>addGuess(ch)}
+            className= {clsx('keyboard-button', guessedLetters.includes(ch) ? (currentWord.includes(ch) ? "right" : "wrong") : "")}
         >
             {ch.toUpperCase()}
         </button>
