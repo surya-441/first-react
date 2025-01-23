@@ -6,9 +6,10 @@ import { useState } from 'react';
 function AssemblyEndgameMain() {
     const [ currentWord, setCurrentWord ] = useState('react');
     const [ guessedLetters, setGuessedLetters ] = useState([]);
-    const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-    console.log(guessedLetters);
+    const wrongGuessCount = guessedLetters.reduce((acc, ch)=> acc += currentWord.includes(ch) ? 0 : 1, 0)
+
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     function addGuess(ch) {
         setGuessedLetters((prevGuesses) => prevGuesses.includes(ch) ?
@@ -16,8 +17,9 @@ function AssemblyEndgameMain() {
                                             [...prevGuesses, ch])
     }
 
-    const languageElements = languages.map((language) => 
+    const languageElements = languages.map((language, index) => 
         <span  key={nanoid()}
+            className={index < wrongGuessCount ? 'lost' : ''}
             style={{backgroundColor: language.backgroundColor, color: language.color}}
         >
             {language.name}
