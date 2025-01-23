@@ -8,6 +8,8 @@ function AssemblyEndgameMain() {
     const [ guessedLetters, setGuessedLetters ] = useState([]);
 
     const wrongGuessCount = guessedLetters.reduce((acc, ch)=> acc += currentWord.includes(ch) ? 0 : 1, 0)
+    const isGameOver = (wrongGuessCount >=  languages.length || currentWord.split("").every(ch => guessedLetters.includes(ch)));
+    console.log(isGameOver)
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
@@ -54,7 +56,7 @@ function AssemblyEndgameMain() {
             <section className='keyboard'>
                 {alphabetArray}
             </section>
-            <button className='new-game-button'>New Game</button>
+            {isGameOver && <button className='new-game-button'>New Game</button>}
         </main>
     );
 }
