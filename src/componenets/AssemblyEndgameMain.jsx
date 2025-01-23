@@ -8,8 +8,7 @@ function AssemblyEndgameMain() {
     const [ guessedLetters, setGuessedLetters ] = useState([]);
 
     const wrongGuessCount = guessedLetters.reduce((acc, ch)=> acc += currentWord.includes(ch) ? 0 : 1, 0)
-    const isGameOver = (wrongGuessCount >=  languages.length || currentWord.split("").every(ch => guessedLetters.includes(ch)));
-    console.log(isGameOver)
+    const isGameOver = (wrongGuessCount >=  languages.length - 1 || currentWord.split("").every(ch => guessedLetters.includes(ch)));
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
