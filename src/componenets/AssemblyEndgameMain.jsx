@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import { clsx } from 'clsx';
 import { useState } from 'react';
 import { getRandomWord } from '../util.js';
+import Confetti from 'react-confetti';
 import AssemblyEndgameStatus from './AssemblyEndgameStatus.jsx';
 
 function AssemblyEndgameMain() {
@@ -16,7 +17,6 @@ function AssemblyEndgameMain() {
     const isGameOver = isGameLost || isGameWon;
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
-
 
     function addGuess(ch) {
         setGuessedLetters((prevGuesses) => prevGuesses.includes(ch) ?
@@ -65,6 +65,7 @@ function AssemblyEndgameMain() {
                 {alphabetArray}
             </section>
             {isGameOver && <button className='new-game-button' onClick={handleNewGame}>New Game</button>}
+            {isGameWon && <Confetti recycle={false} numberOfPieces={1000} />}
         </main>
     );
 }
