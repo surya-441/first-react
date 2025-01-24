@@ -3,14 +3,19 @@ import { languages } from '../languages';
 import { nanoid } from 'nanoid';
 import { clsx } from 'clsx';
 import { useState } from 'react';
+import AssemblyEndgameStatus from './AssemblyEndgameStatus.jsx';
+
 function AssemblyEndgameMain() {
     const [ currentWord, setCurrentWord ] = useState('react');
     const [ guessedLetters, setGuessedLetters ] = useState([]);
 
     const wrongGuessCount = guessedLetters.reduce((acc, ch)=> acc += currentWord.includes(ch) ? 0 : 1, 0)
-    const isGameOver = (wrongGuessCount >=  languages.length - 1 || currentWord.split("").every(ch => guessedLetters.includes(ch)));
+    const isGameWon = currentWord.split("").every(ch => guessedLetters.includes(ch))
+    const isGameLost = wrongGuessCount >=  languages.length - 1
+    const isGameOver = isGameLost || isGameWon;
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
 
     function addGuess(ch) {
         setGuessedLetters((prevGuesses) => prevGuesses.includes(ch) ?
@@ -42,10 +47,7 @@ function AssemblyEndgameMain() {
 
     return (
         <main className='assembly-endgame-main'>
-            <section className='game-status'>
-                <h2>You Win!</h2>
-                <p>Well done! 🎉</p>
-            </section>
+            <AssemblyEndgameStatus isGameLost={isGameLost} isGameWon={isGameWon} language={guessedLetters.length && !currentWord.includes(guessedLetters[guessedLetters.length - 1]) ? languages[wrongGuessCount - 1].name : null} />
             <section className='language-chips'>
                 {languageElements}
             </section>
