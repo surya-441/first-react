@@ -23,6 +23,11 @@ function AssemblyEndgameMain() {
                                             prevGuesses :
                                             [...prevGuesses, ch])
     }
+    
+    function handleNewGame() {
+        setCurrentWord(getRandomWord())
+        setGuessedLetters([])
+    }
 
     const languageElements = languages.map((language, index) => 
         <span  key={nanoid()}
@@ -59,7 +64,7 @@ function AssemblyEndgameMain() {
             <section className={clsx('keyboard', {disabled: isGameOver})}>
                 {alphabetArray}
             </section>
-            {isGameOver && <button className='new-game-button'>New Game</button>}
+            {isGameOver && <button className='new-game-button' onClick={handleNewGame}>New Game</button>}
         </main>
     );
 }
