@@ -3,10 +3,11 @@ import { languages } from '../languages';
 import { nanoid } from 'nanoid';
 import { clsx } from 'clsx';
 import { useState } from 'react';
+import { getRandomWord } from '../util.js';
 import AssemblyEndgameStatus from './AssemblyEndgameStatus.jsx';
 
 function AssemblyEndgameMain() {
-    const [ currentWord, setCurrentWord ] = useState('react');
+    const [ currentWord, setCurrentWord ] = useState(() => getRandomWord());
     const [ guessedLetters, setGuessedLetters ] = useState([]);
 
     const wrongGuessCount = guessedLetters.reduce((acc, ch)=> acc += currentWord.includes(ch) ? 0 : 1, 0)
@@ -39,7 +40,8 @@ function AssemblyEndgameMain() {
     const alphabetArray = alphabet.split("").map((ch) =>
         <button key={nanoid()}
             onClick={()=>addGuess(ch)}
-            className= {clsx('keyboard-button', guessedLetters.includes(ch) ? (currentWord.includes(ch) ? "right" : "wrong") : "")}
+            className={clsx('keyboard-button', guessedLetters.includes(ch) ? (currentWord.includes(ch) ? "right" : "wrong") : "")}
+            disabled={isGameOver}
         >
             {ch.toUpperCase()}
         </button>
@@ -47,14 +49,14 @@ function AssemblyEndgameMain() {
 
     return (
         <main className='assembly-endgame-main'>
-            <AssemblyEndgameStatus isGameLost={isGameLost} isGameWon={isGameWon} language={guessedLetters.length && !currentWord.includes(guessedLetters[guessedLetters.length - 1]) ? languages[wrongGuessCount - 1].name : null} />
+            <AssemblyEndgameStatus isGameLost={isGameLost} isGameWon={isGameWon} language={!isGameOver && guessedLetters.length && !currentWord.includes(guessedLetters[guessedLetters.length - 1]) ? languages[wrongGuessCount - 1].name : null} />
             <section className='language-chips'>
                 {languageElements}
             </section>
             <section className='current-word'>
                 {currentWordArray}
             </section>
-            <section className='keyboard'>
+            <section className={clsx('keyboard', {disabled: isGameOver})}>
                 {alphabetArray}
             </section>
             {isGameOver && <button className='new-game-button'>New Game</button>}
