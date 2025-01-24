@@ -38,8 +38,8 @@ function AssemblyEndgameMain() {
         </span>
     )
     const currentWordArray = currentWord.split("").map((ch) => 
-        <span key={nanoid()}>
-            {guessedLetters.includes(ch) ? ch.toUpperCase() : ""}
+        <span key={nanoid()} className={isGameLost && !guessedLetters.includes(ch) ? "missed-char" : ""}>
+            {guessedLetters.includes(ch) || isGameLost ? ch.toUpperCase() : ""}
         </span>
     )
     const alphabetArray = alphabet.split("").map((ch) =>
