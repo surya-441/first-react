@@ -54,7 +54,7 @@
 }
 
 .current-word > span.missed-char{
-    color: red;
+    color: #EC5D49;
 }
 
 .keyboard {
