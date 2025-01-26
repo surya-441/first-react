@@ -2,7 +2,7 @@ import './AssemblyEndgameMain.css';
 import { languages } from '../languages';
 import { nanoid } from 'nanoid';
 import { clsx } from 'clsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getRandomWord } from '../util.js';
 import Confetti from 'react-confetti';
 import AssemblyEndgameStatus from './AssemblyEndgameStatus.jsx';
@@ -28,6 +28,20 @@ function AssemblyEndgameMain() {
         setCurrentWord(getRandomWord())
         setGuessedLetters([])
     }
+
+    function handleKeyDown(event) {
+        if(!(event.ctrlKey || event.shiftKey || event.altKey || event.metaKey) && event.key >= 'a' && event.key <= 'z') {
+            addGuess(event.key)
+        }
+    }
+
+    useEffect(()=>{
+        window.addEventListener('keydown', handleKeyDown)
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [])
 
     const languageElements = languages.map((language, index) => 
         <span  key={nanoid()}
