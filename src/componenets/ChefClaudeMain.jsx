@@ -33,8 +33,8 @@ function ChefClaudeMain() {
                 />
                 <button>Add ingredient</button>
             </form>
-            {ingredients.length > 0 && <ChefClaudeIngredientsList ingredients={ingredients} getRecipe={getRecipe} ref={recipeSection} />}
-            {recipe.length > 0 && <ChefClaudeRecipe recipe={recipe}/>}
+            {ingredients.length > 0 && <ChefClaudeIngredientsList ingredients={ingredients} getRecipe={getRecipe} />}
+            {recipe.length > 0 && <ChefClaudeRecipe recipe={recipe} ref={recipeSection} />}
         </main>
     );
 }
